@@ -7,53 +7,38 @@
 	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
 	<script>
 		window.onload = function () {
-
 			setTimeout(function () {
 				var resizeEvent = window.document.createEvent('UIEvents');
 				resizeEvent.initUIEvent('resize', true, false, window, 0);
 				window.dispatchEvent(resizeEvent);
 			}, 3000);
-		};	
+		};
 	</script>
 </head>
 
-<body style='margin : 0px; overflow: hidden;'>
-<!-- Div chứa text cố định trên màn hình -->
-	<div 
-		style="
-			position: absolute;
-			text-align: center;
-			bottom: 12vh;
-			width: 100%;
-			z-index: 10;
-			color: white;
-			font-family: 'Nunito', monospace;
-			font-size: 5vw;
-			text-shadow: 0px 0px 5px black;
-			pointer-events: none;">
-		<h3 id="prompt">Looking for an animal marker...</h3>
-	</div>
-
-	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+<body style="margin: 0px; overflow: hidden;">
+	<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 		<a-assets>
 			<img id="image1" src="./media/images/Elephant.jpg">
 			<img id="image2" src="./media/images/Panda.jpg">
 		</a-assets>
 
-		<a-marker preset='custom' type='pattern' url='/marker/pattern-Elephant.patt'>
-			<!-- <a-entity position="0 0 0" rotation="-90 0 0" scale="1 1 1" gltf-model="/media/models/bird_orange.glb"></a-entity> -->
-			<a-image id="img1" src="#image1" width="16" height="9" position="0 4 10" rotation="-90 0 0" scale="0.1 0.2 1" visible="false"></a-image>
-			<a-text value="This is a Elephant" position="-1 1 -1" scale="1 1 1" color="#FFFFFF" 
-				rotation="-90 0 0"></a-text>
+		<!-- Marker for Elephant -->
+		<a-marker preset="custom" type="pattern" url="/marker/pattern-Elephant.patt">
+			<a-entity scale="0.5 0.5 0.5" position="0 0 0">
+				<a-image src="#image1" width="16" height="9" position="0 4 10" rotation="-90 0 0"></a-image>
+				<a-text value="This is a Elephant" position="0 3 10" scale="5 5 5" rotation="-90 0 0" color="#FFFFFF"></a-text>
+			</a-entity>
 		</a-marker>
 
-		<a-marker preset='custom' type='pattern' url='/marker/pattern-Panda.patt'>
-			<!-- <a-entity position="0 0 0" rotation="-90 0 0" scale="1 1 1" gltf-model="/media/models/bird_orange.glb"></a-entity> -->
-			<a-image id="img2" src="#image2" width="16" height="9" position="0 4 10" rotation="-90 0 0" scale="0.1 0.2 1" visible="false"></a-image>
-			<a-text value="This is a Panda" position="-1 1 -1" scale="1 1 1" color="#FFFFFF" 
-				rotation="-90 0 0"></a-text>
+		<!-- Marker for Panda -->
+		<a-marker preset="custom" type="pattern" url="/marker/pattern-Panda.patt">
+			<a-entity scale="0.5 0.5 0.5" position="0 0 0">
+				<a-image src="#image2" width="16" height="9" position="0 4 10" rotation="-90 0 0"></a-image>
+				<a-text value="This is a Panda" position="0 3 10" scale="5 5 5" rotation="-90 0 0" color="#FFFFFF"></a-text>
+			</a-entity>
 		</a-marker>
-		
+
 		<a-entity camera></a-entity>
 	</a-scene>
 </body>
