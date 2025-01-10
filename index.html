@@ -21,12 +21,20 @@
 	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 		<a-assets>
 			<img id="image1" src="./media/images/Elephant.jpg">
+			<img id="image2" src="./media/images/Panda.jpg">
 		</a-assets>
 
-		<a-marker preset='custom' type='pattern' url='/marker/pattern-Elephant.patt' id="bird-marker">
+		<a-marker preset='custom' type='pattern' url='/marker/pattern-Elephant.patt'>
 			<!-- <a-entity position="0 0 0" rotation="-90 0 0" scale="1 1 1" gltf-model="/media/models/bird_orange.glb"></a-entity> -->
 			<a-image id="img1" src="#image1" width="16" height="9" position="0 4 10" rotation="-90 0 0" scale="0.1 0.2 1" visible="false"></a-image>
 			<a-text value="This is a Elephant" position="-1 1 -1" scale="1 1 1" color="#FFFFFF" 
+				rotation="-90 0 0"></a-text>
+		</a-marker>
+
+		<a-marker preset='custom' type='pattern' url='/marker/pattern-Panda.patt'>
+			<!-- <a-entity position="0 0 0" rotation="-90 0 0" scale="1 1 1" gltf-model="/media/models/bird_orange.glb"></a-entity> -->
+			<a-image id="img2" src="#image2" width="16" height="9" position="0 4 10" rotation="-90 0 0" scale="0.1 0.2 1" visible="false"></a-image>
+			<a-text value="This is a Panda" position="-1 1 -1" scale="1 1 1" color="#FFFFFF" 
 				rotation="-90 0 0"></a-text>
 		</a-marker>
 		
