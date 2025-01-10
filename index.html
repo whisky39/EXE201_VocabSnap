@@ -18,6 +18,22 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
+<!-- Div chứa text cố định trên màn hình -->
+	<div 
+		style="
+			position: absolute;
+			text-align: center;
+			bottom: 12vh;
+			width: 100%;
+			z-index: 10;
+			color: white;
+			font-family: 'Nunito', monospace;
+			font-size: 5vw;
+			text-shadow: 0px 0px 5px black;
+			pointer-events: none;">
+		<h3 id="prompt">Looking for an animal marker...</h3>
+	</div>
+
 	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 		<a-assets>
 			<img id="image1" src="./media/images/Elephant.jpg">
